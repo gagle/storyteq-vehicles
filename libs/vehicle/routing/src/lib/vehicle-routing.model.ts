@@ -1,5 +1,4 @@
 export enum VehicleView {
-  Overview = 'Overview',
+  Overview = 'vehicles',
 }
 
-export const DEFAULT_VEHICLE_VIEW = VehicleView.Overview;

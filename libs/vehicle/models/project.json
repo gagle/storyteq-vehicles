@@ -1,0 +1,31 @@
+{
+  "name": "vehicle-models",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/vehicle/models/src",
+  "prefix": "st",
+  "projectType": "library",
+  "tags": ["domain:vehicle", "type:models", "vehicle-models"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/vehicle/models/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "cache": true,
+        "cacheLocation": "eslint_cache",
+        "outputs": ["{options.outputFile}", "{workspaceRoot}/eslint_cache/vehicle-models"]
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p libs/vehicle/models/tsconfig.spec.json --noEmit"]
+      }
+    }
+  }
+}
