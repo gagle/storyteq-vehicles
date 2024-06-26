@@ -1,0 +1,20 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", "apps/storyteq-vehicle/src/assets/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["apps/y42-ux3/tsconfig.lint.json"],
+        "EXPERIMENTAL_useProjectService": true
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "parser": "@angular-eslint/template-parser",
+      "extends": ["plugin:@nx/angular-template", "plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}

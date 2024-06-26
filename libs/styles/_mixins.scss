@@ -1,0 +1,40 @@
+@mixin font-primary() {
+  font-family: Inter, sans-serif;
+}
+
+@mixin font-normal() {
+  font-weight: 500;
+}
+@mixin font-medium() {
+  font-weight: 600;
+}
+
+@mixin text-size($fontSize, $lineHeight) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin text-title-xl() {
+  @include text-size(2rem, 3rem); // 32, 48
+}
+@mixin text-title-l() {
+  @include text-size(1.375rem, 2.0625rem); // 22, 33
+}
+@mixin text-title-m() {
+  @include text-size(1rem, 1.5rem); // 16, 24
+}
+
+
+@mixin text-body-l() {
+  @include text-size(1rem, 1.5rem); // 16, 24
+}
+@mixin text-body-m() {
+  @include text-size(0.8125rem, 1rem); // 13, 16
+}
+@mixin text-body-s() {
+  @include text-size(0.75rem, 0.875rem); // 12, 14
+}
+
+@mixin text-body-s() {
+  @include text-size(0.75rem, 0.875rem); // 12, 14
+}

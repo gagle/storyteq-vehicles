@@ -1,0 +1,27 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.options": {
+    "extensions": [
+      ".ts",
+      ".component.html"
+    ]
+  },
+  "eslint.validate": ["html", "typescript", "json"],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "eslint.codeActionsOnSave.mode": "problems",
+}

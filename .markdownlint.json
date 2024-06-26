@@ -1,0 +1,8 @@
+{
+  "default": true,
+  "line-length": false,
+  "ol-prefix": false,
+  "no-bare-urls": false,
+  "no-hard-tabs": false,
+  "no-inline-html": false
+}

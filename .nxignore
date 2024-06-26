@@ -1,0 +1,7 @@
+.angular
+coverage
+dist
+eslint_cache
+jest_cache
+node_modules
+tmp

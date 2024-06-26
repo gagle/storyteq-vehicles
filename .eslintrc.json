@@ -1,0 +1,79 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "plugins": ["simple-import-sort", "import"],
+      "rules": {
+        "@typescript-eslint/no-restricted-imports": [
+          "warn",
+          {
+            "paths": [
+              {
+                "name": "@angular/common",
+                "importNames": ["CommonModule"],
+                "message": "Prefer importing components and directives directly instead. E.g. prefer importing 'NgIf' and 'AsyncPipe' directly."
+              },
+              {
+                "name": "@angular/router",
+                "importNames": ["RouterModule"],
+                "message": "Prefer importing components and directives directly instead. E.g. prefer importing 'RouterOutlet' and 'RouterLink' directly."
+              }
+            ]
+          }
+        ],
+        "simple-import-sort/imports": [
+          "warn",
+          {
+            "groups": [["^\\u0000", "^@?\\w", "^[^.]", "^\\."]]
+          }
+        ],
+        "simple-import-sort/exports": "warn"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "parser": "@angular-eslint/template-parser",
+      "extends": ["plugin:@nx/angular-template", "plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "@angular-eslint/template/no-negated-async": "error",
+        "@angular-eslint/template/no-call-expression": "error",
+        "@angular-eslint/template/use-track-by-function": "error"
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "extends": ["plugin:jest/recommended"],
+      "rules": {}
+    }
+  ]
+}

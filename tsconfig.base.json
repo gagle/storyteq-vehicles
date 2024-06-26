@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true,
+    "extendedDiagnostics": {
+      "defaultCategory": "error"
+    }
+  },
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2020",
+    "module": "esnext",
+    "lib": ["es2022", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@st/environment": ["libs/core/environment/src/lib/index.ts"],
+      "@st/vehicle/feature/overview": ["libs/vehicle/feature/overview/src/index.ts"],
+      "@st/vehicle/feature/shell": ["libs/vehicle/feature/shell/src/index.ts"],
+      "@st/vehicle/routing": ["libs/vehicle/routing/src/index.ts"],
+      "@st/vehicle/shared/*": ["libs/vehicle/shared/src/lib/*"],
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

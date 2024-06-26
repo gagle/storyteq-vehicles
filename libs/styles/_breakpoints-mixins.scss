@@ -1,0 +1,64 @@
+// Breakpoints variables
+$x-small-max-breakpoint: 599px;
+$small-min-breakpoint: $x-small-max-breakpoint + 1;
+$small-max-breakpoint: 959px;
+$medium-min-breakpoint: $small-max-breakpoint + 1;
+$medium-max-breakpoint: 1279px;
+$large-min-breakpoint: $medium-max-breakpoint + 1;
+$large-max-breakpoint: 1919px;
+$x-large-min-breakpoint: $large-max-breakpoint + 1;
+
+// Breakpoints with Angular Material
+@mixin x-small {
+  @media screen and (max-width: #{$x-small-max-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (min-width: #{$small-min-breakpoint}) and (max-width: #{$small-max-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin start-from-small {
+  @media screen and (min-width: #{$small-min-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-min-breakpoint}) and (max-width: #{$medium-max-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin before-medium {
+  @media screen and (max-width: #{$small-max-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin start-from-medium {
+  @media screen and (min-width: #{$medium-min-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: #{$large-min-breakpoint}) and (max-width: #{$large-max-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin start-from-large {
+  @media screen and (min-width: #{$large-min-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media screen and (min-width: #{$x-large-min-breakpoint}) {
+    @content;
+  }
+}
