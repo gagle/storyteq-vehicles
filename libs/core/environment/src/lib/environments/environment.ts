@@ -7,6 +7,6 @@ export const environment: Environment = {
   name: 'local',
   release_version: 'local',
   url: {
-    vehicle_api: `https://${baseDomain}/api/vehicle`,
+    vehicle_api: `https://${baseDomain}/api/vehicles`,
   },
 };

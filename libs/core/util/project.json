@@ -1,0 +1,31 @@
+{
+  "name": "core-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/util/src",
+  "prefix": "st",
+  "projectType": "library",
+  "tags": ["scope:core", "type:api"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/core/util/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "cache": true,
+        "cacheLocation": "eslint_cache",
+        "outputs": ["{options.outputFile}", "{workspaceRoot}/eslint_cache/core-util"]
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p libs/core/util/tsconfig.spec.json --noEmit"]
+      }
+    }
+  }
+}

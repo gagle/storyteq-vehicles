@@ -145,4 +145,7 @@
   --typography-primary: rgba(var(--text), #{$opacity-1});
   --typography-secondary: rgba(var(--text), #{$opacity-2});
   --typography-disabled: rgba(var(--text), #{$opacity-4});
+
+  --letter-spacing-normal: normal;
+  --letter-spacing-wide: 0.1rem;
 }

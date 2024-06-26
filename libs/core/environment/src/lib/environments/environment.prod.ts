@@ -1,4 +1,4 @@
-import { getEnvVar } from '@st/environment';
+import { getEnvVar } from '../get-env-var';
 import { Environment } from './environment.model';
 
 export const environment: Environment = {

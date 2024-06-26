@@ -1,4 +1,3 @@
-// Breakpoints variables
 $x-small-max-breakpoint: 599px;
 $small-min-breakpoint: $x-small-max-breakpoint + 1;
 $small-max-breakpoint: 959px;
@@ -8,7 +7,6 @@ $large-min-breakpoint: $medium-max-breakpoint + 1;
 $large-max-breakpoint: 1919px;
 $x-large-min-breakpoint: $large-max-breakpoint + 1;
 
-// Breakpoints with Angular Material
 @mixin x-small {
   @media screen and (max-width: #{$x-small-max-breakpoint}) {
     @content;

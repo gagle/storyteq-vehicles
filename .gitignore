@@ -42,3 +42,5 @@ Thumbs.db
 .nx/workspace-data
 
 .angular
+jest_cache
+eslint_cache

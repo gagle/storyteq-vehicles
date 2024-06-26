@@ -1,19 +1,16 @@
-import { enableProdMode, provideZoneChangeDetection } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
 import { enableElfProdMode } from '@ngneat/elf';
 import { devTools } from '@ngneat/elf-devtools';
+import { IS_PROD_BUILD } from '@st/core/environment';
 import { AppComponent } from './app/app.component';
-import { APP_ROUTES } from './app/app.routes';
-import { environment } from './environments/environment';
+import { APP_CONFIG } from './app/app.config';
 
-if (environment.production_build) {
+if (IS_PROD_BUILD) {
   enableProdMode();
   enableElfProdMode();
 } else {
   devTools();
 }
 
-bootstrapApplication(AppComponent, {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(APP_ROUTES)],
-}).catch((err) => console.error(err));
+bootstrapApplication(AppComponent, APP_CONFIG).catch((err) => console.error(err));

@@ -1,3 +1,5 @@
+@import 'breakpoint-mixins';
+
 @mixin font-primary() {
   font-family: Inter, sans-serif;
 }
@@ -7,6 +9,9 @@
 }
 @mixin font-medium() {
   font-weight: 600;
+}
+@mixin font-bold() {
+  font-weight: 700;
 }
 
 @mixin text-size($fontSize, $lineHeight) {
@@ -23,7 +28,9 @@
 @mixin text-title-m() {
   @include text-size(1rem, 1.5rem); // 16, 24
 }
-
+@mixin text-title-s() {
+  @include text-size(0.8125rem, 1rem); // 13, 16
+}
 
 @mixin text-body-l() {
   @include text-size(1rem, 1.5rem); // 16, 24
@@ -34,7 +41,34 @@
 @mixin text-body-s() {
   @include text-size(0.75rem, 0.875rem); // 12, 14
 }
+@mixin text-body-xs() {
+  @include text-size(0.625rem, 0.75rem); // 10, 12
+}
 
-@mixin text-body-s() {
-  @include text-size(0.75rem, 0.875rem); // 12, 14
+@mixin typography-primary() {
+  color: var(--typography-primary);
+}
+@mixin typography-secondary() {
+  color: var(--typography-secondary);
+}
+@mixin typography-disabled() {
+  color: var(--typography-disabled);
+}
+
+@mixin letter-spacing-normal() {
+  letter-spacing: var(--letter-spacing-normal);
+}
+@mixin letter-spacing-wide() {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+@mixin flex-grid-items($cols) {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    $item-width: 100% / $cols;
+    width: $item-width;
+    box-sizing: border-box;
+  }
 }

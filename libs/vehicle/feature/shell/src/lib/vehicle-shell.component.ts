@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { provideVehicle } from '@st/vehicle/api/provide-vehicle';
 import { VehicleListComponent } from '@st/vehicle/shared/list/vehicle-list.component';
 
 @Component({
@@ -8,8 +9,6 @@ import { VehicleListComponent } from '@st/vehicle/shared/list/vehicle-list.compo
   standalone: true,
   imports: [VehicleListComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'flex h-full',
-  },
+  providers: [provideVehicle()],
 })
 export class VehicleShellComponent {}

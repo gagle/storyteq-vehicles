@@ -30,13 +30,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "@st/environment": ["libs/core/environment/src/lib/index.ts"],
-      "@st/error-handling": ["libs/core/error-handling/src/index.ts"],
+      "@st/core/environment": ["libs/core/environment/src/lib/index.ts"],
+      "@st/core/error-handling": ["libs/core/error-handling/src/index.ts"],
+      "@st/core/state": ["libs/core/state/src/index.ts"],
+      "@st/core/util/*": ["libs/core/util/src/lib/*"],
       "@st/vehicle/api/*": ["libs/vehicle/api/src/lib/*"],
       "@st/vehicle/feature/overview": ["libs/vehicle/feature/overview/src/index.ts"],
       "@st/vehicle/feature/shell": ["libs/vehicle/feature/shell/src/index.ts"],
       "@st/vehicle/models": ["libs/vehicle/models/src/index.ts"],
       "@st/vehicle/routing": ["libs/vehicle/routing/src/index.ts"],
+      "@st/vehicle/state/*": ["libs/vehicle/state/src/lib/*"],
       "@st/vehicle/shared/*": ["libs/vehicle/shared/src/lib/*"],
     }
   },

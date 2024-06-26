@@ -7,7 +7,7 @@ html {
 
 body {
   @include font-primary;
-  color: var(--typography-primary);
+  @include typography-primary;
   background-color: var(--background-primary);
   @include text-body-m;
   @include font-normal;

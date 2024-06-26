@@ -1,0 +1,14 @@
+@for(vehicle of vehicles(); track vehicle.id) {
+<div class="vehicle">
+  <picture class="vehicle__image-wrapper">
+    <source [srcset]="vehicle.imgWide" media="(min-width: 600px)" />
+    <source [srcset]="vehicle.imgSquare" media="(max-width: 599px)" />
+    <img class="vehicle__image" alt="vehicle" />
+  </picture>
+  <div class="vehicle__details">
+    <span class="vehicle__name"> {{ vehicle.name }}</span>
+    <span class="vehicle__price"> From {{ vehicle.price }}</span>
+    <span class="vehicle__description"> {{ vehicle.description }}</span>
+  </div>
+</div>
+}

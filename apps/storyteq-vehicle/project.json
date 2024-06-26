@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "st",
+  "implicitDependencies": ["assets"],
   "sourceRoot": "apps/storyteq-vehicle/src",
   "tags": ["app:storeyteq-cars", "type:app"],
   "targets": {
@@ -17,7 +18,13 @@
         "tsConfig": "apps/storyteq-vehicle/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/storyteq-vehicle/src/assets"
+          "apps/storyteq-vehicle/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/assets",
+            "output": "/assets",
+            "ignore": ["project.json"]
+          }
         ],
         "styles": ["apps/storyteq-vehicle/src/styles.scss", "libs/styles/styles.scss"],
         "scripts": [],
@@ -42,8 +49,8 @@
           "outputHashing": "all",
           "fileReplacements": [
             {
-              "replace": "apps/storyteq-vehicle/src/environments/environment.ts",
-              "with": "apps/storyteq-vehicle/src/environments/environment.prod.ts"
+              "replace": "libs/core/environment/src/lib/environments/environment.ts",
+              "with": "libs/core/environment/src/lib/environments/environment.prod.ts"
             }
           ]
         },
