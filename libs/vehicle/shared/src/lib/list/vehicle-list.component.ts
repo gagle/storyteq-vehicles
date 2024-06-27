@@ -1,22 +1,24 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { RouterOutlet } from '@angular/router';
 import { ErrorHandlerService } from '@st/core/error-handling';
 import { VehicleService } from '@st/vehicle/api/vehicle.service';
+import { VehicleId } from '@st/vehicle/models';
 import { VehicleQuery } from '@st/vehicle/state/vehicle.query';
 import { of } from 'rxjs';
+import { VehicleDetailsDialogService } from '../dialog/vehicle-details-dialog.service';
 
 @Component({
   selector: 'st-vehicle-list',
   templateUrl: './vehicle-list.component.html',
   styleUrls: ['./vehicle-list.component.scss'],
   standalone: true,
-  imports: [RouterOutlet],
+  providers: [VehicleDetailsDialogService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VehicleListComponent {
   constructor(
     private readonly vehicleService: VehicleService,
+    private readonly vehicleDetailsDialogService: VehicleDetailsDialogService,
     private readonly vehicleQuery: VehicleQuery,
     private readonly errorHandlerService: ErrorHandlerService,
   ) {
@@ -24,6 +26,10 @@ export class VehicleListComponent {
   }
 
   readonly vehicles = toSignal(this.vehicleQuery.selectAllEntities());
+
+  openVehicleDetailsDialog(vehicleId: VehicleId) {
+    this.vehicleDetailsDialogService.open(vehicleId);
+  }
 
   private loadVehicles() {
     return this.vehicleService

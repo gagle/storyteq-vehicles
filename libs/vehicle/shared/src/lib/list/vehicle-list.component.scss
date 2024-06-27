@@ -20,6 +20,7 @@
 
 .vehicle {
   display: flex;
+  cursor: pointer;
 
   @include start-from-small {
     flex-direction: column;
