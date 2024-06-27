@@ -53,8 +53,8 @@ export class VehicleService {
     return {
       ...baseVehicle,
       ...fullVehicle,
-      imgSquare: this.getVehicleImageUrl(baseVehicle.media, '1x1'),
-      imgWide: this.getVehicleImageUrl(baseVehicle.media, '16x9'),
+      imgSquareUrl: this.getVehicleImageUrl(baseVehicle.media, '1x1'),
+      imgWideUrl: this.getVehicleImageUrl(baseVehicle.media, '16x9'),
     };
   }
 

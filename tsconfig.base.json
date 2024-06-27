@@ -32,8 +32,10 @@
     "paths": {
       "@st/core/environment": ["libs/core/environment/src/lib/index.ts"],
       "@st/core/error-handling": ["libs/core/error-handling/src/index.ts"],
+      "@st/core/error-handling/testing": ["libs/core/error-handling/src/lib/testing/index.ts"],
       "@st/core/state": ["libs/core/state/src/index.ts"],
       "@st/core/util/*": ["libs/core/util/src/lib/*"],
+      "@st/testing": ["libs/core/testing/src/index.ts"],
       "@st/vehicle/api/*": ["libs/vehicle/api/src/lib/*"],
       "@st/vehicle/feature/overview": ["libs/vehicle/feature/overview/src/index.ts"],
       "@st/vehicle/feature/shell": ["libs/vehicle/feature/shell/src/index.ts"],

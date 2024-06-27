@@ -50,7 +50,9 @@ export const getJestConfig: (projectName?: string) => Config = (projectName) => 
       '**/*.ts',
       // important: define exclusions after inclusions
       '!**/testing/**/*.ts',
+      '!**/provide-*.ts',
       '!**/models/**/*.ts',
+      '!**/*.model.ts',
       '!**/jest.config.ts',
       '!**/index.ts',
     ],

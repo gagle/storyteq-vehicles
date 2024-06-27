@@ -1,4 +1,4 @@
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { catchError, Observable, ObservableInput, ObservedValueOf, OperatorFunction } from 'rxjs';
 
 export interface ErrorHandlerOptions {
@@ -12,10 +12,6 @@ export interface ErrorHandlerOptions {
  */
 @Injectable({ providedIn: 'root' })
 export class ErrorHandlerService extends ErrorHandler {
-  constructor(private readonly injector: Injector) {
-    super();
-  }
-
   /**
    * This method is called by Angular - **do not use it**.
    *

@@ -7,7 +7,6 @@ const baseConfig = getJestConfig(projectName);
 export default {
   ...baseConfig,
   coverageDirectory: `../../coverage/apps/${projectName}`,
-  collectCoverageFrom: [...baseConfig.collectCoverageFrom!, '!src/main.ts', '!src/environments/*'],
   coverageThreshold: {
     global: {
       statements: 80,

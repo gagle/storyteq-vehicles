@@ -2,11 +2,8 @@
 import { Config } from 'jest';
 import { getJestConfig } from '../../../jest.config.base';
 
-const baseConfig = getJestConfig('core-environment');
-
 const config: Config = {
-  ...baseConfig,
-  collectCoverageFrom: [...baseConfig.collectCoverageFrom!, '!src/lib/environments/*'],
+  ...getJestConfig('core-testing'),
 };
 
 export default config;

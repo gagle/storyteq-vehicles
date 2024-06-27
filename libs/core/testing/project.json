@@ -1,0 +1,31 @@
+{
+  "name": "core-testing",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/testing/src",
+  "prefix": "st",
+  "projectType": "library",
+  "tags": ["scope:core", "type:api"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/core/testing/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "cache": true,
+        "cacheLocation": "eslint_cache",
+        "outputs": ["{options.outputFile}", "{workspaceRoot}/eslint_cache/core-testing"]
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p libs/core/testing/tsconfig.spec.json --noEmit"]
+      }
+    }
+  }
+}

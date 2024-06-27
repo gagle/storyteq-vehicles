@@ -81,7 +81,15 @@
         "jest": true
       },
       "extends": ["plugin:jest/recommended"],
-      "rules": {}
+      "rules": {
+        "jest/valid-title": "off",
+        "jest/expect-expect": [
+          "warn",
+          {
+            "assertFunctionNames": ["expect", "httpTestingController.expectOne"]
+          }
+        ]
+      }
     }
   ]
 }
