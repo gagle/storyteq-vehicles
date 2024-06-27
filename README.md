@@ -10,16 +10,30 @@ Run `npx nx build storyteq-vehicle` to build the application. The build artifact
 
 ## Running tasks
 
+It's recommended to globally install Nx.
+
 To execute tasks with Nx use the following syntax:
 
 ```bash
 npx nx <target> <project> <...options>
 ```
 
+Example:
+
+```bash
+nx run vehicle-api:test
+```
+
 You can also run multiple targets:
 
 ```bash
 npx nx run-many -t <target1> <target2>
+```
+
+Example:
+
+```bash
+nx run-many -t test lint type-check
 ```
 
 ..or add `-p` to filter specific projects

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Inject, Provider } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
-import { RouterOutlet } from '@angular/router';
 import { assertNonNullable } from '@st/core/util/assert';
 import { VehicleStoreModel } from '@st/vehicle/models';
 import { VehicleQuery } from '@st/vehicle/state/vehicle.query';

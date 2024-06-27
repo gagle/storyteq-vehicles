@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideMockErrorHandlerService } from '@st/core/error-handling/testing';
 import { mockWith } from '@st/testing';
 import { VehicleService } from '@st/vehicle/api/vehicle.service';
@@ -7,6 +8,7 @@ import { VehicleStoreModel } from '@st/vehicle/models';
 import { VehicleQuery } from '@st/vehicle/state/vehicle.query';
 import { of } from 'rxjs';
 import { Mock } from 'ts-mockery';
+import { VehicleDetailsDialogService } from '../dialog/vehicle-details-dialog.service';
 import { VehicleListComponent } from './vehicle-list.component';
 
 describe(VehicleListComponent, () => {
@@ -19,6 +21,7 @@ describe(VehicleListComponent, () => {
     await TestBed.configureTestingModule({
       imports: [VehicleListComponent],
       providers: [
+        provideNoopAnimations(),
         provideMockErrorHandlerService(),
         mockWith(
           VehicleService,
@@ -30,6 +33,13 @@ describe(VehicleListComponent, () => {
           VehicleQuery,
           Mock.of<VehicleQuery>({
             selectAllEntities: () => of(mockVehicles),
+            getEntity: () => mockVehicles[0],
+          }),
+        ),
+        mockWith(
+          VehicleDetailsDialogService,
+          Mock.of<VehicleDetailsDialogService>({
+            open: jest.fn(),
           }),
         ),
       ],
