@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { getAnimationAppearDisappear } from '@st/animation';
 import { ErrorHandlerService } from '@st/core/error-handling';
 import { VehicleService } from '@st/vehicle/api/vehicle.service';
 import { VehicleId } from '@st/vehicle/models';
@@ -14,6 +15,7 @@ import { VehicleDetailsDialogService } from '../dialog/vehicle-details-dialog.se
   standalone: true,
   providers: [VehicleDetailsDialogService],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [getAnimationAppearDisappear({ enter: 500 })],
 })
 export class VehicleListComponent {
   constructor(
