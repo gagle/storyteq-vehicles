@@ -1,5 +1,5 @@
 @for(vehicle of vehicles(); track vehicle.id; let count = $count) {
-<button @appearDisappear class="vehicle" (click)="openVehicleDetailsDialog(vehicle.id)">
+<div @appearDisappear class="vehicle" (click)="openVehicleDetailsDialog(vehicle.id)">
   <picture class="vehicle__image-wrapper">
     <source [srcset]="vehicle.imgWideUrl" media="(min-width: 600px)" />
     <source [srcset]="vehicle.imgSquareUrl" media="(max-width: 599px)" />
@@ -10,5 +10,5 @@
     <span class="vehicle__price"> From {{ vehicle.price }}</span>
     <span class="vehicle__description"> {{ vehicle.description }}</span>
   </div>
-</button>
+</div>
 }
