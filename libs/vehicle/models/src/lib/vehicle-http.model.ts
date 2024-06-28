@@ -28,6 +28,6 @@ export interface VehicleMetaHttpModel {
 export interface VehicleFullHttpModel {
   id: VehicleId;
   description: string;
-  price: string;
+  price?: string;
   meta: VehicleMetaHttpModel;
 }
