@@ -44,7 +44,6 @@ export const getJestConfig: (projectName?: string) => Config = (projectName) => 
       'jest-preset-angular/build/serializers/ng-snapshot',
       'jest-preset-angular/build/serializers/html-comment',
     ],
-    // testRunner: 'jest-jasmine2',
     collectCoverage: true,
     collectCoverageFrom: [
       '**/*.ts',
